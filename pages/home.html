@@ -1,40 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/home.css">
-    <title>Proline Air-Conditioning</title>
+    <link rel="stylesheet" href="../styles/home2.css">
+    <title>Proline Air - Air Conditioning Services</title>
 </head>
+
 <body>
     <nav>
-        <!-- logo -->
-        <!-- page links -->
-        <!-- contact us button? -->
+        <div class="logo">
+            <img src="../assets/logo/proline_logo_transparent.webp" alt="Proline Air-conditioning logo" class="logo-image">
+            <!-- <h1 class="logo-text"><span class="primary strikethrough">Proline </span><br><span class="secondary">air-conditioning</span></h1> -->
+        </div>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle">☰</label>
+        <ul id="nav-links">
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
     </nav>
-    <div class="pages">
-    
-        <section class="services">
-            <!-- auto sliding services? -->
-    
+    <div class="hero-banner">
+        <section class="hero-content">
+            <h2>Air-Conditioning Services & Maintenance</h2>
+            <p>Looking for a professional quote on your air needs?</p>
+            <button>CONTACT US</button>
         </section>
-        <section class="testimony">
-            <!-- auto sliding testimonies? -->
-    
-        </section>
-        <section class="quote">
-            <!-- form with basic contact information -->
-    
-        </section>
-        <section class="guarantee">
-            <!-- certificates -->
-        </section>
-    
     </div>
-    <footer>
-        <!-- quick contact -->
-        <!-- socials -->
-        <!-- copyright -->
-    </footer>
+    <main class="main-content">
+
+          
+        <section id="services">
+            <svg width="220" height="100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Shell -->
+                <rect class="aircon-shell" x="10" y="10" width="200" height="80" rx="10" ry="10" stroke-width="2" />
+              
+                <!-- Air Vents -->
+                <rect class="aircon-vent" x="30" y="15" width="40" height="10"/>
+                <rect class="aircon-vent" x="30" y="25" width="40" height="10"/>
+                <rect class="aircon-vent" x="30" y="35" width="40" height="10"/>
+              
+                <!-- Control Panel -->
+                <rect class="aircon-panel" x="20" y="60" width="60" height="30"/>
+                <circle class="aircon-light" cx="30" cy="75" r="2"/>
+                <circle class="aircon-light" cx="40" cy="75" r="2"/>
+                <circle class="aircon-light" cx="50" cy="75" r="2"/>
+                <circle class="aircon-light" cx="60" cy="75" r="2"/>
+              </svg>
+            <h2>Our Services</h2>
+            <div class="service">
+                <div class="service-description">
+                    <h3>Air Conditioning Installation</h3>
+                    <p>Our professional team provides expert installation of air conditioning systems to ensure optimal
+                        performance and efficiency. We work with all major brands and types of systems.</p>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="service-description">
+                    <h3>Air Conditioning Repair</h3>
+                    <p>We offer quick and reliable repair services for all types of air conditioning systems. Our
+                        experienced technicians can diagnose and fix issues to restore your comfort as soon as possible.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service">
+                <div class="service-description">
+                    <h3>Air Conditioning Maintenance</h3>
+                    <p>Regular maintenance is key to prolong the lifespan of your air conditioning system. Our
+                        comprehensive maintenance services include cleaning, inspection, and preventative repairs.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="testimonies">
+            <h2>Testimonies</h2>
+            <div class="testimony">
+                <p>"The Proline Air team were incredibly professional and efficient. They installed our new air
+                    conditioner in no time and left everything clean and tidy."</p>
+                <h4>- Jenny, Homeowner</h4>
+            </div>
+
+            <div class="testimony">
+                <p>"Proline Air's maintenance service has been a lifesaver! They caught an issue before it became a
+                    major problem and saved me a lot of money."</p>
+                <h4>- Mike, Business Owner</h4>
+            </div>
+
+            <div class="testimony">
+                <p>"When our air conditioner broke down in the middle of a heatwave, Proline Air were there quickly and
+                    had it fixed in no time. Exceptional service!"</p>
+                <h4>- Sarah, Homeowner</h4>
+            </div>
+        </section>
+
+        <section id="quote">
+            <h2>Request a Quote</h2>
+            <form>
+                <input type="text" name="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Your message..." rows="5"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="guarantee">
+            <h2>Our Guarantee</h2>
+            <p>At Proline Air, we promise to provide the best service for your air conditioning needs. Your satisfaction
+                is our top priority.</p>
+        </section>
+
+    </main>
+        <footer>
+            <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+            </p>
+            <p>Contact us: 123-456-7890 | <a href="#">prolineair@example.com</a></p>
+            <p>© 2023 Proline Air. All rights reserved.</p>
+        </footer>
 </body>
+
 </html>
