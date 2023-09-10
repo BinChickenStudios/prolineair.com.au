@@ -1,38 +1,356 @@
-html,body{
-    padding: 0;
+@font-face{
+    font-family: 'roboto';
+    src: url("../assets/fonts/roboto/Roboto-Regular.ttf") format('truetype');
+}
+@font-face{
+    font-family: 'Banque Gothique';
+    src: url("../assets/fonts/Banque-Gothique/Banque-Gothique.ttf") format('truetype');
+}
+@font-face{
+    font-family: 'Neuropol Nova';
+    src: url("../assets/fonts/Neuropol-Nova/Neuropol-Nova.ttf") format('truetype');
+}
+
+:root{
+    --color-accent: #72c9bf;
+    --color-highlight: #a6e2db;
+    --color-black: #231f20;
+    --color-grey: #636464;
+    --color-light: #636464;
+    --color-white: #fff;
+    --font-secondary:  'Neuropol Nova', serif;
+    --font-headers: 'Banque Gothique', sans-serif;
+    --font-text: 'roboto', san-serif;
+}
+
+body {
+    font-family: var(--font-text);
+    color: var(--color-black);
+    background-color: var(--color-white);
     margin: 0;
-    height: 100%;
+    padding: 0;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-height: 100vh;
     width: 100%;
 }
-nav{
-    position: absolute;
-    width: 100%;
-    height: 10vh;
-    padding: 1vh;
-    font-size: 1.5rem;
+
+nav {
+    max-height: 7.5vh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-black);
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+nav:hover {
+    background-color: var(--color-grey);
+}
+
+.logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
+    text-align: center;
+    color: var(--color-white);
+    font-family: var(--font-headers);
+    line-height: 0.6;
+}
+
+.logo h1{
+    display: none;
+}
+
+.logo img {
+    width: auto;
+    height: 20rem;
+    margin-right: 10px;
+}
+
+.logo .primary{
+    color: var(--color-black);
+    text-shadow: 
+    -1px -1px 1px var(--color-accent),
+    1px -1px 1px var(--color-accent),
+    -1px 1px 1px var(--color-accent),
+    1px 1px 1px var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.logo .secondary{
+    color: var(--color-grey);
+    font-family: var(--font-secondary);
+    font-size: 1em;
+    text-transform: lowercase;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+nav input[type=checkbox] {
+    display: none;
+}
+
+nav label {
+    font-size: 30px;
+    color: var(--color-white);
+    transition: all 0.5s ease;
+}
+
+nav input[type=checkbox]:checked ~ label {
+    transform: translateX(-200px);
+}
+
+nav label:hover {
+    transform: scale(1.2);
+}
+
+nav input[type=checkbox]:checked ~ #nav-links {
+    display: block;
+    animation: slideInFromRight 0.5s forwards;
+}
+
+.hero-content-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #636464bb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 1em;
+    overflow: hidden;
+}
+
+.hero-content > div{
+    padding: 20px;
+}
+
+.hero-content > *{
+    margin-top: 20px;
+}
+
+.hero-banner{
+    background-image: url("../assets/images/aircon-repair.jpg");
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 200px;
+    height: 50vh;
+    height: 50svh;
 }
 
 
-p, h1, h2, h3, h4, h5, h6{
+
+@keyframes slideInFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+section {
+    padding: 20px;
+    animation: slideInFromLeft 0.5s forwards;
+    background-color: var(--color-white);
+}
+
+@keyframes slideInFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid var(--color-light);
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border: 2px solid var(--color-accent);
+}
+
+footer {
+    padding: 20px;
+    background-color: var(--color-black);
+    text-align: center;
+    transition: all 0.5s ease;
+    color: var(--color-white);
+}
+
+footer a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+footer:hover {
+    background-color: var(--color-grey);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-accent);
+    font-family: var(--font-headers);
+    text-transform: uppercase;
     margin: 0;
     padding: 0;
 }
 
-
-section{
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-rows: auto;
+a{
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
 }
 
-.title{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+p{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-text);
 }
+
+
+button {
+    font-family: var(--font-text);
+    font-weight: bold;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-highlight);
+}
+
+
+.service, .testimony {
+    min-height: 150px;
+    padding-top: 20px;
+    /* border-bottom: 1px solid var(--color-accent); */
+}
+
+.aircon-shell{
+    fill: var(--color-grey);
+    stroke: var(--color-black);
+}
+
+.aircon-panel{
+    fill: var(--color-grey);
+}
+
+.aircon-vent{
+    fill: var(--color-black);
+}
+
+.aircon-light{
+    fill: var(--color-black);
+    animation: flicker 2000ms infinite alternate;
+}
+
+.aircon-light:nth-of-type(1) {
+    animation-delay: 1s;
+  }
+
+  .aircon-light:nth-of-type(2) {
+    animation-delay: 2s;
+  }
+
+  .aircon-light:nth-of-type(3) {
+    animation-delay: 3s;
+  }
+
+  .aircon-light:nth-of-type(4) {
+    animation-delay: 4s;
+  }
+
+
+@keyframes flicker{
+    from{
+        fill: var(--color-black);
+    }
+    to{
+        fill: var(--color-accent)
+    }
+}
+
+  /* For screens from 601px up to 1024px */
+  @media screen and (min-width: 501px) and (min-height: 500px) and (max-width: 1024px) and (min-height: 600px) {
+    .main-content {
+      grid-template-columns: 1fr 1fr; /* Two columns layout */
+    }
+    .hero-content{
+        font-size: 2em;
+    }
+  }
+  
+  /* For screens larger than 1024px */
+  @media screen and (min-width: 1025px) and (min-height: 750px)  {
+    .main-content {
+      grid-template-columns: 1fr 1fr; /* Three columns layout */
+      
+    }
+
+    .hero-content{
+        font-size: 3em;
+    }
+  }
+
+  @media screen and (max-height: 400px){
+    .hero-banner{
+        display: none;
+    }
+  }
+
+
 

@@ -1,0 +1,16 @@
+ <svg width="220" height="100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Shell -->
+                <rect class="aircon-shell" x="10" y="10" width="200" height="80" rx="10" ry="10" stroke-width="2" />
+              
+                <!-- Air Vents -->
+                <rect class="aircon-vent" x="30" y="15" width="40" height="10"/>
+                <rect class="aircon-vent" x="30" y="25" width="40" height="10"/>
+                <rect class="aircon-vent" x="30" y="35" width="40" height="10"/>
+              
+                <!-- Control Panel -->
+                <rect class="aircon-panel" x="20" y="60" width="60" height="30"/>
+                <circle class="aircon-light" cx="30" cy="75" r="2"/>
+                <circle class="aircon-light" cx="40" cy="75" r="2"/>
+                <circle class="aircon-light" cx="50" cy="75" r="2"/>
+                <circle class="aircon-light" cx="60" cy="75" r="2"/>
+              </svg>
