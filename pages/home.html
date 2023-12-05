@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/home.css">
@@ -9,11 +10,10 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="../assets/logo/proline_logo_transparent.webp" alt="Proline Air-conditioning logo" class="logo-image">
+            <img src="../assets/logo/proline_logo_transparent.webp" alt="Proline Air-conditioning logo"
+                class="logo-image">
             <!-- <h1 class="logo-text"><span class="primary strikethrough">Proline </span><br><span class="secondary">air-conditioning</span></h1> -->
         </div>
-        <input type="checkbox" id="nav-toggle">
-        <label for="nav-toggle">☰</label>
         <ul id="nav-links">
             <li><a href="#services">Our Services</a></li>
             <li><a href="#about">About Us</a></li>
@@ -30,9 +30,16 @@
             </div>
         </div>
     </header>
+
     <main class="main-content">
 
-          
+        <!-- <section id="promotional">
+            <h2>Promotional Offer Available</h2>
+            <p>Get a 10% discount for your next quote!</p>
+            <button>Get A Quote</button> -->
+            <!-- <img src="/assets/images/family-aircon.jpg" alt="aircon.png"> -->
+        <!-- </section> -->
+
         <section id="services">
             <h2>Our Services</h2>
             <div class="service">
@@ -101,13 +108,24 @@
                 is our top priority.</p>
         </section>
 
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" name="firstname" placeholder="First Name" required>
+                <input type="text" name="lastname" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Your message..." rows="5"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
-        <footer>
-            <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
-            </p>
-            <p>Contact us: 123-456-7890 | <a href="#">prolineair@example.com</a></p>
-            <p>© 2023 Proline Air. All rights reserved.</p>
-        </footer>
+    <footer>
+        <p>Follow us on social media: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+        </p>
+        <p>Contact us: 123-456-7890 | <a href="#">prolineair@example.com</a></p>
+        <p>© 2023 Proline Air. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
