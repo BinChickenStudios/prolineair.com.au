@@ -86,7 +86,7 @@
     --spacing-md: 16px;
     --spacing-lg: 32px;
     --spacing-xl: 64px;
-    --spacing-super: 192px;
+    --spacing-super: 128px;
 
     --letter-spacing-std: 0px;
     --letter-spacing-sm: 0.25px;
@@ -107,6 +107,12 @@
     --icon-md: 32px;
     --icon-lg: 64px;
     --icon-xl: 128px;
+
+    --image-sm: 256px;
+    --image-md: 512px;
+    --image-lg: 1024px;
+    --image-xl: 2048px;
+
 
     /* ANIMATION */
     --transition-fast: 100ms;
@@ -356,19 +362,32 @@ button.highlight {
     display: none;
 }
 
+.glow {
+
+}
+
+.grid-span {
+    grid-column: 1/3;
+}
 
 /* GENERAL STYLES */
 
 /* GENERAL LAYOUT */
+body {
+    background-color: var(--color-light);
+}
+
 body, main {
     font-family: var(--font-body);
-    color: var(--color-dark);
-    background-color: var(--color-light);
-    
+    color: var(--color-dark);    
     overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+main {
+    /* z-index: -9999; */
 }
 
 body,
@@ -384,8 +403,42 @@ footer,
     align-items: center;
 }
 
+header,
 section {
-    margin: var(--spacing-lg) 0 var(--spacing-lg) 0;
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+section.background {
+    position: relative;
+    z-index: -1;
+}
+
+section.background.primary,
+section.background.secondary,
+section.background.black,
+section.background.white,
+section.background.dark,
+section.background.light,
+section.background.highlight
+ {
+
+    background: none;
+}
+
+
+section.background::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: calc(200% + var(--spacing-lg));
+    transform: skewy(-10deg);
+    z-index: -2;
+}
+
+section.primary.background::before {
+    background-color: var(--color-accent);
 }
 
 .section-container {
@@ -426,7 +479,7 @@ h5,
 h6,
 blockquote,
 ul{
-    margin: 0;
+    margin: 0 0 var(--spacing-sm) 0;
     padding: 0;
 }
 
@@ -538,6 +591,7 @@ button:hover {
 
 img {
     box-sizing: border-box;
+    margin: 0 0 var(--spacing-md) 0;
 }
 
 img.icon {
@@ -684,13 +738,12 @@ header.banner p {
 
 .services-grid .service {
     min-height: 500px;
-    position: relative;
 }
 
 .service img {
     width: calc(100% + calc(var(--spacing-lg) * 2));
-    height: 50%;
-    margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-lg) * -1) 0 calc(var(--spacing-lg) * -1);
+    max-height: var(--image-sm);
+    margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-lg) * -1) var(--spacing-md) calc(var(--spacing-lg) * -1);
     object-fit: cover;
     object-position: 25% 25%; 
 }
@@ -702,6 +755,7 @@ header.banner p {
     gap: var(--spacing-xl);
     align-items: center;
     justify-content: center;
+    padding: var(--spacing-lg);
 }
 
 .brands-grid img {
@@ -733,8 +787,40 @@ header.banner p {
 }
 
 /* Quote */
+.get-quote {
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg) 0;
+}
+
 .quote-grid {
     width: 100%;
+}
+
+
+form input, form textarea {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid var(--color-secondary);
+    height: 4rem;
+    border-radius: 4px;
+    outline: none;
+    transition: border var(--transition-fast) ease;
+}
+
+form textarea {
+    grid-column: 1/3;
+    height: 16rem;
+}
+
+form button {
+    grid-column: 1/3;
+    height: 4rem;
+}
+
+form input:focus, form textarea:focus {
+    border: 5px solid var(--color-accent);
 }
 
 /* Footer */
@@ -766,40 +852,6 @@ header.banner p {
     --font-secondary-size: 0.9rem;
     --font-navlink-size: 1rem;
     --font-button-size: 1rem;
-    
-    --p-line-height: 1.5rem;
-    --h1-line-height: 6rem;
-    --h2-line-height: 4rem;
-    --secondary-line-height: 1.25rem;
-    
-    /* SPACING VARIABLES */
-    --max-width: 1440px;
-
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
-    --spacing-xl: 64px;
-    --spacing-super: 192px;
-
-    --letter-spacing-std: 0px;
-    --letter-spacing-sm: 0.25px;
-    --letter-spacing-md: 0.5px;
-    --letter-spacing-lg: 1.25px;
-    --letter-spacing-xl: 3px;
-    --letter-spacing-n-sm: -0.25px;
-    --letter-spacing-n-md: -0.5px;
-    --letter-spacing-n-lg: -1.25px;
-    --letter-spacing-n-xl: -3px;
-
-    --border-radius-sm: 4px;
-    --border-radius-md: 16px;
-    --border-radius-lg: 32px;
-    --border-radius-round: 50%;
-
-    --icon-sm: 16px;
-    --icon-md: 32px;
-    --icon-lg: 64px;
-    --icon-xl: 128px;
     }
 
     header.banner h2 {
@@ -821,9 +873,13 @@ header.banner p {
         grid-template-columns: 1fr 1fr;
     }
 
+    .services-grid > .card:nth-child(3n) {
+        grid-column: 1/3;
+    }
+
     .brands-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 100px;
+        gap: var(--spacing-sm) var(--spacing-super);
     }
 }
 
@@ -834,6 +890,7 @@ header.banner p {
         align-items: center;
         text-align: center;
     }
+    
     .navbar .links, .navbar .quote {
         display: none;
     }
@@ -842,9 +899,6 @@ header.banner p {
         display: block;
     }
     
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
     .brands-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -855,6 +909,36 @@ header.banner p {
         grid-template-columns: 1fr;
     }    
 
+}
+
+/* Small Tablet */
+@media only screen and (max-width: 600px) {
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid > .card:nth-child(3n) {
+        grid-column: 1;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-grid {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-super) 0;
+    }
+
+    .grid-span {
+        grid-column: 1;
+    }
 }
 
 /* MOBILE */
@@ -912,15 +996,7 @@ header.banner p {
 
     header.banner {
     }
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    .brands-grid {
-        grid-template-columns: 1fr;
-    }
-    .reviews-grid {
-        grid-template-columns: 1fr;
-    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
