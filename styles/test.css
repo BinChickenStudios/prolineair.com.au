@@ -80,7 +80,7 @@
     --secondary-line-height: 1.25rem;
     
     /* SPACING VARIABLES */
-    --max-width: 1920px;
+    --max-width: 1440px;
 
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -365,6 +365,7 @@ body, main {
     color: var(--color-dark);
     background-color: var(--color-light);
     
+    overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -381,7 +382,10 @@ footer,
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 var(--spacing-lg) 0;
+}
+
+section {
+    margin: var(--spacing-lg) 0 var(--spacing-lg) 0;
 }
 
 .section-container {
@@ -493,6 +497,10 @@ blockquote::after {
     font-size: calc(var(--font-blockquote-size) * 1.5);
 }
 
+ul {
+    list-style: none;
+}
+
 /* GENERAL INTERACTABLE ELEMENTS */
 a {
     text-decoration: none;
@@ -542,7 +550,7 @@ img.auto {
     max-width: 100%;
 }
 
-img.hero {
+img.hero, a.logo {
     width: 100%;
     height: auto;
 }
@@ -568,15 +576,19 @@ img.hero {
  .navigation {
     margin: 0;
  }
+
  .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+}
+
+ .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-md);
+    justify-content: center;
     align-items: center;
 
     width: 100%;
-    height: 10vh;
-    max-height: 128px;
     padding: 0 var(--spacing-md); 
     margin: 0;
 }
@@ -584,7 +596,7 @@ img.hero {
     filter: var(--shadow-glow);    
 }
 
-.navbar > .menu {
+.navbar > .links {
     display: inline-flex;
     flex-direction: row;
     list-style: none;
@@ -592,18 +604,18 @@ img.hero {
     align-items: center;
 }
 
-.navbar > .menu li {
-    margin: 0 var(--spacing-lg);
+.navbar > .links li {
+    padding: 0 var(--spacing-sm);
 }
 
-.navbar > .menu a {
+.navbar > .links a {
     font-size: var(--font-navlink-size);
     font-weight: var(--weight-bold);
     color: var(--color-white);
     transition: filter var(--transition-fast) ease-in;
 }
 
-.navbar > .menu a:hover {
+.navbar > .links a:hover {
     text-decoration: underline;
     filter: var(--shadow-glow);    
 }
@@ -613,12 +625,18 @@ img.hero {
     transition: filter var(--transition-fast) ease-in;
 }
 
+.navbar .menu {
+    display: none;
+}
+
 /* BANNER */
 header.banner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+
     height: 35vh;
     min-height: 250px;
     max-height: 500px;
@@ -631,7 +649,7 @@ header.banner::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/images/aircon-repair.jpg);
+    background-image: url(../assets/images/aircon-repair-01.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
@@ -664,8 +682,17 @@ header.banner p {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.services-grid .card {
+.services-grid .service {
     min-height: 500px;
+    position: relative;
+}
+
+.service img {
+    width: calc(100% + calc(var(--spacing-lg) * 2));
+    height: 50%;
+    margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-lg) * -1) 0 calc(var(--spacing-lg) * -1);
+    object-fit: cover;
+    object-position: 25% 25%; 
 }
 
 /* BRANDS */
@@ -693,4 +720,220 @@ header.banner p {
 
 .reviews-grid .stars {
     font-size: var(--font-h4-size);
+}
+
+/* about us */
+
+.about-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.about-grid img {
+    border-radius: 4px;
+}
+
+/* Quote */
+.quote-grid {
+    width: 100%;
+}
+
+/* Footer */
+
+/* 4K */
+@media only screen and (max-width: 2560px) {
+    
+}
+
+/* DESKTOP */
+@media only screen and (max-width: 1440px) {
+
+}
+
+/* LAPTOP */
+@media only screen and (max-width: 1024px) {
+
+    :root {
+    /* FONT-SIZE */
+    --font-text-size: 1rem;
+    --font-p-size: 1rem;
+    --font-blockquote-size: 1rem;
+    --font-h1-size: 4.5rem;
+    --font-h2-size: 4rem;
+    --font-h3-size: 2.5rem;
+    --font-h4-size: 2rem;
+    --font-h5-size: 1.75rem;
+    --font-h6-size: 1.25rem;
+    --font-secondary-size: 0.9rem;
+    --font-navlink-size: 1rem;
+    --font-button-size: 1rem;
+    
+    --p-line-height: 1.5rem;
+    --h1-line-height: 6rem;
+    --h2-line-height: 4rem;
+    --secondary-line-height: 1.25rem;
+    
+    /* SPACING VARIABLES */
+    --max-width: 1440px;
+
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+    --spacing-super: 192px;
+
+    --letter-spacing-std: 0px;
+    --letter-spacing-sm: 0.25px;
+    --letter-spacing-md: 0.5px;
+    --letter-spacing-lg: 1.25px;
+    --letter-spacing-xl: 3px;
+    --letter-spacing-n-sm: -0.25px;
+    --letter-spacing-n-md: -0.5px;
+    --letter-spacing-n-lg: -1.25px;
+    --letter-spacing-n-xl: -3px;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 32px;
+    --border-radius-round: 50%;
+
+    --icon-sm: 16px;
+    --icon-md: 32px;
+    --icon-lg: 64px;
+    --icon-xl: 128px;
+    }
+
+    header.banner h2 {
+        margin: 0 0 var(--spacing-md) 0;
+    }
+
+    /* LAPTOP NAVBAR */
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .navbar .links li {
+        margin: 0 var(--spacing-sm);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+    }
+}
+
+/*  TABLET */
+@media only screen and (max-width: 768px) {
+
+    .section-container {
+        align-items: center;
+        text-align: center;
+    }
+    .navbar .links, .navbar .quote {
+        display: none;
+    }
+
+    .navbar .menu {
+        display: block;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .brands-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }    
+
+}
+
+/* MOBILE */
+@media only screen and (max-width: 425px) {
+
+    :root {
+        /* FONT-SIZE */
+        --font-text-size: 1rem;
+        --font-p-size: 1rem;
+        --font-blockquote-size: 1rem;
+        --font-h1-size: 3rem;
+        --font-h2-size: 4rem;
+        --font-h3-size: 2.5rem;
+        --font-h4-size: 1.5rem;
+        --font-h5-size: 1.75rem;
+        --font-h6-size: 1.25rem;
+        --font-secondary-size: 0.9rem;
+        --font-navlink-size: 1rem;
+        --font-button-size: 1rem;
+        
+        --p-line-height: 1.5rem;
+        --h1-line-height: 6rem;
+        --h2-line-height: 4rem;
+        --secondary-line-height: 1.25rem;
+        
+        /* SPACING VARIABLES */
+        --max-width: 1440px;
+    
+        --spacing-sm: 8px;
+        --spacing-md: 16px;
+        --spacing-lg: 32px;
+        --spacing-xl: 64px;
+        --spacing-super: 192px;
+    
+        --letter-spacing-std: 0px;
+        --letter-spacing-sm: 0.25px;
+        --letter-spacing-md: 0.5px;
+        --letter-spacing-lg: 1.25px;
+        --letter-spacing-xl: 3px;
+        --letter-spacing-n-sm: -0.25px;
+        --letter-spacing-n-md: -0.5px;
+        --letter-spacing-n-lg: -1.25px;
+        --letter-spacing-n-xl: -3px;
+    
+        --border-radius-sm: 4px;
+        --border-radius-md: 16px;
+        --border-radius-lg: 32px;
+        --border-radius-round: 50%;
+    
+        --icon-sm: 16px;
+        --icon-md: 32px;
+        --icon-lg: 64px;
+        --icon-xl: 128px;
+        }
+
+    header.banner {
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* WEARABLES */
+@media only screen and (max-width: 225px) {
+
 }
