@@ -11,8 +11,7 @@
 <body>
     <header class="navigation dark">
         <nav class="navbar section-container">
-            <a class="logo" href="#">
-                <div class="logo-image"></div>
+            <a class="logo image-container" href="#">
             </a>
             <ul class="links">
                 <li><a href="#services" class="navlink"">Our Services</a></li>
@@ -20,22 +19,22 @@
                 <li><a href="#contact" class="navlink">Contact Us</a></li>
             </ul>
             <button class="quote primary hover-white">Get A Quote</button>
-            <button class="menu">
-
-            </button>
+            <button class="menu"></button>
         </nav>
     </header>
-    <header class="banner black">
+    <!-- <header class="banner black">
         <h2 class="primary">Looking for a quote?</h2>
         <p><strong>Call us now</strong> at <em>+61 012 345 678</em></p>
-    </header>
+    </header> -->
     <main class="">
         <section class="services">
             <div class="section-container">
                 <h2>Services</h2>
                 <div class="services-grid grid-container">
                     <div class="service card light">
-                        <img src="../assets/images/aircon-install-01.jpg" class="hero" alt="installation">
+                        <div class="image-container">
+                            <img src="../assets/images/aircon-install-01.jpg" class="hero" alt="installation">
+                        </div>
                         <h3>Installation</h3>
                         <p>At Proline Air-Conditioning, we take pride in our personalized approach to air conditioning
                             installations. As a smaller business, we offer attentive and customized services. Our
@@ -242,11 +241,11 @@
             </div>
         </section>
     </main>
-    <!-- <footer class="dark">
+    <footer class="footer dark">
         <div class="section-container">
             <div class="footer-grid grid-container">
                 <div>
-                    <ul>
+                    <ul class="links">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">About</a></li>
@@ -255,30 +254,29 @@
                     </ul>
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nihil itaque asperiores libero
-                        magni nostrum placeat eos, id mollitia vitae omnis? Quis deserunt cupiditate veniam, assumenda
-                        tempore sapiente in culpa?</p>
-                </div>
-                <div>
-                    <p>Phone: +61 234 567 890</p>
-                    <p>Email: contact@prolineair.com.au</p>
-                    <div>
-                        <ul class="flex-container">
-                            <li><img src="../assets/socials/facebook" alt="facebook" class="icon"></li>
-                            <li><img src="../assets/socials/instagram" alt="instagram" class="icon"></li>
-                            <li><img src="../assets/socials/twitter" alt="twitter" class="icon"></li>
-                            <li><img src="../assets/socials/linkedin" alt="linkedin" class="icon"></li>
-                            <li><img src="../assets/socials/whatsapp" alt="whatsapp" class="icon"></li>
+                    <p>Phone: <a href="tel:+61 405 198 899">+61 405 198 899</a></p>
+                    <p>Email: <a href="mailto:ibrahimaouli@gmail.com">contact@prolineair.com.au</a></p>
+                    <div class="">
+                        <ul class="social-container flex-container">
+                            <li><a href="www.facebook.com"><div class="icon"><img src="../assets/socials/facebook.svg" alt="facebook" class="hero"></div></a></li>
+                            <li><a href="www.instagram.com"><div class="icon"><img src="../assets/socials/instagram.svg" alt="instagram" class="hero"></div></a></li>
+                            <li><a href="www.twitter.com"><div class="icon"><img src="../assets/socials/twitter.svg" alt="twitter" class="hero"></div></a></li>
+                            <li><a href="www.linkedin.com"><div class="icon"><img src="../assets/socials/linkedin.svg" alt="linkedin" class="hero"></div></a></li>
+                            <li><a href="www.whatsapp.com"><div class="icon"><img src="../assets/socials/whatsapp.svg" alt="whatsapp" class="hero"></div></a></li>
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <p>Copyright All Rights Reserved prolineair</p>
-                    <p>Designed by the SiteToWeb</p>
-                </div>
+
             </div>
         </div>
-    </footer> -->
+    </footer>
+
+    <footer class="copyright black">
+        <div class="section-container">
+            <p> &copy; 2024 proline air-conditioning All Rights Reserved - Designed by the &copy; SiteToWeb</p>
+            <div></div>
+        </div>
+    </footer>
 </body>
 
 </html>
