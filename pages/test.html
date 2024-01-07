@@ -9,25 +9,45 @@
 </head>
 
 <body>
+
+    <a href="#top"><div class="top-icon">
+        <span></span>
+        <span></span>
+    </div></a>
+
     <header class="navigation dark">
         <nav class="navbar section-container">
             <a class="logo image-container" href="#">
             </a>
             <ul class="links">
                 <li><a href="#services" class="navlink"">Our Services</a></li>
-                <li><a href=" #about" class="navlink">About Us</a></li>
-                <li><a href="#contact" class="navlink">Contact Us</a></li>
+                <li><a href="#about" class="navlink">About Us</a></li>
+                <li><a href="#quote" class="navlink">Contact Us</a></li>
             </ul>
-            <button class="quote primary hover-white">Get A Quote</button>
-            <button class="menu"></button>
+            <a href="#quote"><button class="quote primary hover-white">Get A Quote</button></a>
+            <input type="checkbox" name="menu-check" id="menu-check">
+            <label class="hamburger" for="menu-check">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+            <div class="menu">
+                <!-- <ul>
+                    <li><a href="#services" class="navlink"">Our Services</a></li>
+                    <li><a href="#about" class="navlink">About Us</a></li>
+                    <li><a href="#quote" class="navlink">Contact Us</a></li>
+                </ul> -->
+            </div>
         </nav>
     </header>
     <!-- <header class="banner black">
         <h2 class="primary">Looking for a quote?</h2>
         <p><strong>Call us now</strong> at <em>+61 012 345 678</em></p>
     </header> -->
-    <main class="">
-        <section class="services">
+    <main id="top">
+        <section class="services" id="services">
             <div class="section-container">
                 <h2>Services</h2>
                 <div class="services-grid grid-container">
@@ -122,7 +142,7 @@
                 </div>
             </div>
         </section>
-        <section class="brands">
+        <section class="brands" id="brands">
             <div class="section-container">
                 <h2>Supported Brands</h2>
                 <div class="brands-grid grid-container">
@@ -137,7 +157,7 @@
                 </div>
             </div>
         </section>
-        <section class="get-quote dark">
+        <section class="get-quote dark" id="quote">
             <div class="section-container">
                 <h3>Get A Quote</h3>
                 <form class="quote-grid grid-container">
@@ -151,7 +171,7 @@
                 </form>
             </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
             <div class="section-container">
                 <h2>reviews</h2>
                 <div class="reviews-grid grid-container">
@@ -190,7 +210,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="section-container">
                 <h3>About Us</h3>
                 <img src="../assets/images/family-aircon.jpg" alt="proline air" class="hero auto">
@@ -247,22 +267,22 @@
                 <div>
                     <ul class="links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#quote">Contact</a></li>
                         <li><a href="#">Feedback</a></li>
                     </ul>
                 </div>
                 <div>
-                    <p>Phone: <a href="tel:+61 405 198 899">+61 405 198 899</a></p>
-                    <p>Email: <a href="mailto:ibrahimaouli@gmail.com">contact@prolineair.com.au</a></p>
+                    <p><a href="tel:+61 416 344 313">Phone: 0416 344 313</a></p>
+                    <p><a href="mailto:moussa@prolineair.net">Email: moussa@prolineair.net</a></p>
                     <div class="">
                         <ul class="social-container flex-container">
-                            <li><a href="www.facebook.com"><div class="icon"><img src="../assets/socials/facebook.svg" alt="facebook" class="hero"></div></a></li>
-                            <li><a href="www.instagram.com"><div class="icon"><img src="../assets/socials/instagram.svg" alt="instagram" class="hero"></div></a></li>
-                            <li><a href="www.twitter.com"><div class="icon"><img src="../assets/socials/twitter.svg" alt="twitter" class="hero"></div></a></li>
-                            <li><a href="www.linkedin.com"><div class="icon"><img src="../assets/socials/linkedin.svg" alt="linkedin" class="hero"></div></a></li>
-                            <li><a href="www.whatsapp.com"><div class="icon"><img src="../assets/socials/whatsapp.svg" alt="whatsapp" class="hero"></div></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100083719779090"><div class="icon"><img src="../assets/socials/facebook.svg" alt="facebook" class="hero"></div></a></li>
+                            <li><a href="https://www.instagram.com/prolineairconditioning?igsh=MTdodjB6dnFvazk5Zw=="><div class="icon"><img src="../assets/socials/instagram.svg" alt="instagram" class="hero"></div></a></li>
+                            <!-- <li><a href="https://www.twitter.com"><div class="icon"><img src="../assets/socials/twitter.svg" alt="twitter" class="hero"></div></a></li> -->
+                            <!-- <li><a href="htttps://www.linkedin.com"><div class="icon"><img src="../assets/socials/linkedin.svg" alt="linkedin" class="hero"></div></a></li> -->
+                            <li><a href="https://api.whatsapp.com/send?phone=+61416344313"><div class="icon"><img src="../assets/socials/whatsapp.svg" alt="whatsapp" class="hero"></div></a></li>
                         </ul>
                     </div>
                 </div>

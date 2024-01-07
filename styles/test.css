@@ -115,7 +115,7 @@
 
     --icon-sm: 16px;
     --icon-md: 32px;
-    --icon-lg: 48px;
+    --icon-lg: 52px;
     --icon-xl: 128px;
 
     --image-sm: 256px;
@@ -641,6 +641,96 @@ img.hero{
     height: 100%;
 }
 
+.hamburger-icon {
+    width: var(--icon-lg);
+    height: var(--icon-md);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    /* background-color: green; */
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 3px;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-accent);
+    position: absolute;
+    transition: transform var(--transition-slow) ease, opacity var(--transition-slow) ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 50%;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 100%;
+}
+
+.hamburger-icon:hover {
+    filter: var(--shadow-glow);
+}
+
+#menu-check:checked ~ .hamburger .hamburger-icon span {
+    top: 50%;
+}
+
+
+#menu-check:checked ~ .hamburger .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+#menu-check:checked ~ .hamburger .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#menu-check:checked ~ .hamburger .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.top-icon {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    background-color: var(--color-dark);
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    z-index: 2;
+}
+
+
+.top-icon span {
+    width: 100%;
+    height: 3px;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-accent);
+    position: absolute;
+    transition: transform var(--transition-slow) ease, opacity var(--transition-slow) ease;
+}
+
+.top-icon span:nth-child(1) {
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.top-icon span:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
 /* .logo > .logo-image {
 
     background-image: url(../assets/logo/proline_logo_1024x1024_Transparent.webp);
@@ -696,7 +786,8 @@ img.hero{
 }
 
 .navbar > .links a:hover {
-    filter: var(--shadow-glow);    
+    filter: var(--shadow-glow);   
+    color: var(--color-highlight); 
 }
 
 .navbar > .quote {
@@ -708,8 +799,55 @@ img.hero{
 }
 
 .navbar .menu {
+    width: 15%;
+    height: 50vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    filter: var(--shadow-heavy);
+    
+    transition: transform var(--transition-slow) ease, opacity var(--transition-slow) linear;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.navbar #menu-check {
     display: none;
 }
+
+.navbar #menu-check:checked ~ .menu {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navbar .hamburger {
+    display: none;
+    position: fixed;
+    right: 3%;
+    z-index: 2;
+}
+
+.navbar .hamburger::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -12px;
+    width: calc(var(--icon-lg) * 1.5);
+    height: calc(var(--icon-lg) * 1.5);
+    background: var(--color-dark);
+    border-radius: var(--border-radius-round);
+}
+
+
+
+
 
 /* BANNER */
 header.banner {
@@ -856,8 +994,13 @@ footer > .section-container {
     padding: var(--spacing-md);
 }
 
-.footer-grid {
+.footer > .section-container {
     min-height: 30vh;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.footer-grid {
     align-items: center;
 }
 
@@ -876,7 +1019,7 @@ footer > .section-container {
     width: 100%;
     justify-content: center;
     grid-template-columns: 1fr;
-    gap: 0 var(--spacing-sm);
+    gap: var(--spacing-sm) var(--spacing-sm);
 }
 
 .footer-grid .social-container img {
@@ -923,8 +1066,9 @@ footer > .section-container {
 
 
 .copyright .section-container {
+    justify-content: center;
     align-items: center;
-    min-height: 10vh;
+    min-height: 5vh;
 }
 
 .copyright p {
@@ -995,14 +1139,14 @@ footer > .section-container {
     }
     
     .navbar {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 0fr 1fr;
     }
 
     .navbar .links, .navbar .quote {
         display: none;
     }
 
-    .navbar .menu {
+    .navbar .hamburger {
         display: block;
     }
     
@@ -1096,7 +1240,7 @@ footer > .section-container {
 /* WEARABLES */
 @media only screen and (max-width: 350px) {
     :root {
-        --icon-lg: 32px;
+        /* --icon-lg: 32px; */
     }
 
     .social-container {
