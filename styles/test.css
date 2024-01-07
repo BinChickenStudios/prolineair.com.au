@@ -856,7 +856,10 @@ footer > .section-container {
     padding: var(--spacing-md);
 }
 
-
+.footer-grid {
+    min-height: 30vh;
+    align-items: center;
+}
 
 .footer-grid .links {
     display: flex;
@@ -917,8 +920,11 @@ footer > .section-container {
     color: var(--color-highlight);
 }
 
+
+
 .copyright .section-container {
     align-items: center;
+    min-height: 10vh;
 }
 
 .copyright p {
@@ -1086,6 +1092,18 @@ footer > .section-container {
 
 
 }
+
+/* WEARABLES */
+@media only screen and (max-width: 350px) {
+    :root {
+        --icon-lg: 32px;
+    }
+
+    .social-container {
+        flex-wrap: wrap;
+    }
+}
+
 
 /* WEARABLES */
 @media only screen and (max-width: 225px) {
