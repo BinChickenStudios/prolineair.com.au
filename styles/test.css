@@ -58,6 +58,7 @@
 
       
     --shadow-glow: drop-shadow(0 0 24px var(--color-highlight-transparent-semi));  
+    --shadow-glow-full: drop-shadow(0 2px 1px var(--color-highlight)) drop-shadow(0 0 16px var(--color-highlight));  
     /* TEXT */
     --font-secondary:  'Neuropol Nova', serif;
     --font-heading: 'Banque Gothique', sans-serif;
@@ -824,10 +825,11 @@ img.hero{
 .navbar > .logo{
     height: 100%;
     width: auto;
+    transition: filter var(--transition-normal) ease;
 }
 
  .navbar > .logo:hover {
-    filter: var(--shadow-glow);    
+    filter: var(--shadow-glow-full);   
 }
 
 .navbar > .links {
