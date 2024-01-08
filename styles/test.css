@@ -641,6 +641,35 @@ img.hero{
     height: 100%;
 }
 
+.ui {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+}
+
+.ui::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1.5);
+    width: calc(var(--icon-lg));
+    height: calc(var(--icon-lg));
+    background: var(--color-dark);
+    border-radius: var(--border-radius-round);
+}
+
+.hamburger:hover {
+    filter: var(--shadow-glow);
+}
+
+.hamburger:hover::before {
+    background-color: var(--color-light);
+}
+
 .hamburger-icon {
     width: var(--icon-lg);
     height: var(--icon-md);
@@ -648,7 +677,6 @@ img.hero{
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    /* background-color: green; */
 }
 
 .hamburger-icon span {
@@ -659,6 +687,11 @@ img.hero{
     position: absolute;
     transition: transform var(--transition-slow) ease, opacity var(--transition-slow) ease;
 }
+
+.hamburger:hover .hamburger-icon span {
+    background-color: var(--color-dark);
+}
+
 
 .hamburger-icon span:nth-child(1) {
     top: 0;
@@ -694,35 +727,66 @@ img.hero{
     transform: rotate(-45deg);
 }
 
-.top-icon {
+.top-button {
     position: fixed;
     bottom: 3%;
     right: 3%;
-    background-color: var(--color-dark);
     width: var(--icon-lg);
     height: var(--icon-lg);
     z-index: 2;
+    transform: rotate(-90deg) scale(1.25);
+
+}
+
+.top-button > .icon {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    position: relative;
+}
+
+.top-button > .icon::before {
+    content: "";
+    position: absolute;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    border-radius: calc(var(--border-radius-round));
+    background-color: var(--color-light);
+    top: 0;
+    left: 0;
+    transform: scale(0.9);
+    z-index: 0;
+}
+
+.top-icon {
+    filter: var(--color-svg-accent);
+}
+
+.top-button:hover .top-icon {
+    filter: var(--color-svg-white);
+}
+
+.top-button:hover .icon::before {
+    background-color: var(--color-dark);
+    filter: var(--shadow-glow);
 }
 
 
 .top-icon span {
-    width: 100%;
+    width: 75%;
     height: 3px;
     border-radius: var(--border-radius-md);
     background-color: var(--color-accent);
     position: absolute;
+    top: 50%;
+    transform-origin: 0%;
     transition: transform var(--transition-slow) ease, opacity var(--transition-slow) ease;
 }
 
 .top-icon span:nth-child(1) {
-    top: 50%;
-    left: 0;
     transform: rotate(45deg);
 }
 
 .top-icon span:nth-child(2) {
-    top: 50%;
-    right: 0;
     transform: rotate(-45deg);
 }
 
@@ -812,13 +876,22 @@ img.hero{
     background-color: var(--color-white);
     color: var(--color-dark);
     filter: var(--shadow-heavy);
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     transition: transform var(--transition-slow) ease, opacity var(--transition-slow) linear;
     transform: translateX(100%);
     opacity: 0;
 }
 
-.navbar #menu-check {
+.navbar > .menu > .links > li {
+    padding: var(--spacing-lg) 0;
+}
+
+.navbar #menu-check, .menu {
     display: none;
 }
 
@@ -833,21 +906,6 @@ img.hero{
     right: 3%;
     z-index: 2;
 }
-
-.navbar .hamburger::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -12px;
-    width: calc(var(--icon-lg) * 1.5);
-    height: calc(var(--icon-lg) * 1.5);
-    background: var(--color-dark);
-    border-radius: var(--border-radius-round);
-}
-
-
-
-
 
 /* BANNER */
 header.banner {
@@ -1073,8 +1131,8 @@ footer > .section-container {
 
 .copyright p {
     font-size: var(--font-secondary-size);
-    letter-spacing: 1.5px;
     font-weight: var(--weight-super);
+    letter-spacing: 1.5px;
     position: relative;
 }
 
@@ -1142,12 +1200,12 @@ footer > .section-container {
         grid-template-columns: 1fr 0fr 1fr;
     }
 
-    .navbar .links, .navbar .quote {
+    .navbar > .links, .navbar .quote {
         display: none;
     }
 
-    .navbar .hamburger {
-        display: block;
+    .navbar .hamburger, .navbar .menu {
+        display: flex;
     }
     
     .brands-grid {
