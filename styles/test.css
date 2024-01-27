@@ -373,8 +373,8 @@ button.highlight {
     display: none;
 }
 
-.glow {
-
+.glow:hover {
+    filter: var(--shadow-glow);
 }
 
 .grid-span {
@@ -384,6 +384,10 @@ button.highlight {
 /* GENERAL STYLES */
 
 /* GENERAL LAYOUT */
+html {
+    scroll-snap-type: y mandatory;
+}
+
 body {
     background-color: var(--color-light);
 }
@@ -929,7 +933,7 @@ header.banner {
     min-height: 250px;
     max-height: 500px;
     position: relative;
-    background-color: var(--color-dark-transparent-semi);
+    background-color: var(--color-black);
 }
 
 header.banner::before {
@@ -937,10 +941,10 @@ header.banner::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../assets/images/aircon-repair-01.jpg);
-    background-size: cover;
+    background-image: url(../assets/images/aircon-panoramic-3.jpg);
     background-repeat: no-repeat;
-    background-position: left;
+    background-size: cover;
+    background-position: 0% 50%;
     z-index: -1;
 }
 
