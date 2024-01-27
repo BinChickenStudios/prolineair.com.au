@@ -132,6 +132,35 @@
     --transition-slow: 500ms;
 }
 
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
+
+.animate-on-scroll.animate-on-scroll-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-300px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+}
+
+
+
 /* ALTERNATORS */
 
 /* PRIMARY */
@@ -383,12 +412,12 @@ button.highlight {
 }
 
 /* GENERAL STYLES */
-
-/* GENERAL LAYOUT */
 html {
-    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
+
+/* GENERAL LAYOUT */
 body {
     background-color: var(--color-light);
 }
@@ -733,6 +762,29 @@ img.hero{
     transform: rotate(-45deg);
 }
 
+@keyframes topButtonIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) rotate(-90deg) scale(1.25);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(-90deg) scale(1.25);
+    }
+}
+
+@keyframes topButtonOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(-90deg) scale(1.25);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100px) rotate(-90deg) scale(1.25);
+    }
+}
+
+
 .top-button {
     position: fixed;
     bottom: 2rem;
@@ -740,9 +792,17 @@ img.hero{
     width: var(--icon-lg);
     height: var(--icon-lg);
     z-index: 2;
-    transform: rotate(-90deg) scale(1.25);
-
 }
+
+
+.top-button-visible {
+    animation: topButtonIn 1s ease forwards;
+}
+
+.top-button-hidden {
+    animation: topButtonOut 1s ease forwards;
+}
+
 
 .top-button > .icon {
     width: var(--icon-lg);
@@ -820,11 +880,19 @@ img.hero{
     margin: 0 0 10vh 0;
 }
 
+
+
  .navigation {
     margin: 0;
     position: fixed;
     z-index: 1;
  }
+
+ .fixed-navbar {
+    position: fixed;
+    z-index: 1;
+}
+
 
  .navbar {
     display: grid;
@@ -892,12 +960,12 @@ img.hero{
     color: var(--color-dark);
     filter: var(--shadow-heavy);
 
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
+
     transition: transform var(--transition-slow) ease, opacity var(--transition-slow) linear;
     transform: translateX(100%);
     opacity: 0;
@@ -977,6 +1045,9 @@ header.banner p {
 }
 
 /* SERVICES */
+section.services {
+    margin: 0 0 var(--spacing-xl) 0;
+}
 .services-grid {
     grid-template-columns: 1fr 1fr 1fr;
 }
