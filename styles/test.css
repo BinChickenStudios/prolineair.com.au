@@ -10,6 +10,7 @@
     font-family: 'Neuropol Nova';
     src: url("../assets/fonts/Neuropol-Nova/Neuropol-Nova.ttf") format('truetype');
 }
+/* @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap'); */
 
 :root{
 
@@ -60,8 +61,8 @@
     --shadow-glow: drop-shadow(0 0 24px var(--color-highlight-transparent-semi));  
     --shadow-glow-full: drop-shadow(0 2px 1px var(--color-highlight)) drop-shadow(0 0 16px var(--color-highlight));  
     /* TEXT */
-    --font-secondary:  'Neuropol Nova', serif;
-    --font-heading: 'Banque Gothique', sans-serif;
+    --font-secondary:  'roboto', serif;
+    --font-heading: 'teko', sans-serif;
     --font-body: 'roboto', san-serif;
     
     --weight-light: 300;
@@ -890,11 +891,6 @@ img.hero{
     background-color: var(--color-white);
     color: var(--color-dark);
     filter: var(--shadow-heavy);
-
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     
     transition: transform var(--transition-slow) ease, opacity var(--transition-slow) linear;
     transform: translateX(100%);
@@ -923,17 +919,22 @@ img.hero{
 
 /* BANNER */
 header.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
     height: 35vh;
     min-height: 250px;
     max-height: 500px;
     position: relative;
     background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header.banner .section-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 header.banner::before {
@@ -1168,7 +1169,7 @@ footer > .section-container {
     --font-text-size: 1rem;
     --font-p-size: 1rem;
     --font-blockquote-size: 1rem;
-    --font-h1-size: 4.5rem;
+    --font-h1-size: 5rem;
     --font-h2-size: 4rem;
     --font-h3-size: 2.5rem;
     --font-h4-size: 2rem;
@@ -1180,7 +1181,7 @@ footer > .section-container {
     }
 
     header.banner h2 {
-        margin: 0 0 var(--spacing-md) 0;
+        margin: 0 0 var(--spacing-lg) 0;
     }
 
     /* LAPTOP NAVBAR */
@@ -1245,6 +1246,30 @@ footer > .section-container {
 /* Small Tablet */
 @media only screen and (max-width: 600px) {
     
+    :root {
+        /* FONT-SIZE */
+        --font-text-size: 1rem;
+        --font-blockquote-size: 1rem;
+        --font-h1-size: 5rem;
+        --font-h2-size: 4rem;
+        --font-h3-size: 2.5rem;
+        --font-h4-size: 1.5rem;
+        --font-h5-size: 1.75rem;
+        --font-h6-size: 1.25rem;
+        --font-secondary-size: 0.9rem;
+        --font-navlink-size: 1rem;
+        --font-button-size: 1rem;
+        --p-line-height: 1.5rem;
+        --h1-line-height: 6rem;
+        --h2-line-height: 4rem;
+        --secondary-line-height: 1.25rem;
+
+    }
+
+    header.banner h2 {
+        padding: 0 25%;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -1278,12 +1303,12 @@ footer > .section-container {
     :root {
         /* FONT-SIZE */
         --font-text-size: 1rem;
-        --font-p-size: 1rem;
+        --font-p-size: 1.rem;
         --font-blockquote-size: 1rem;
-        --font-h1-size: 3rem;
+        --font-h1-size: 4.5rem;
         --font-h2-size: 4rem;
         --font-h3-size: 2.5rem;
-        --font-h4-size: 1.5rem;
+        --font-h4-size: 1.25rem;
         --font-h5-size: 1.75rem;
         --font-h6-size: 1.25rem;
         --font-secondary-size: 0.9rem;
@@ -1294,6 +1319,10 @@ footer > .section-container {
         --h2-line-height: 4rem;
         --secondary-line-height: 1.25rem;
 
+    }
+
+    header.banner h2 {
+        padding: 0 20%;
     }
 
     .about-grid {
@@ -1320,8 +1349,21 @@ footer > .section-container {
 /* WEARABLES */
 @media only screen and (max-width: 350px) {
     :root {
-        /* --icon-lg: 32px; */
+        --font-p-size: 1.rem;
+        --font-blockquote-size: 1rem;
+        --font-h1-size: 4rem;
+        --font-h2-size: 4rem;
+        --font-h3-size: 2.5rem;
+        --font-h4-size: 1rem;
+        --font-h5-size: 1.75rem;
+        --font-h6-size: 1.25rem;
     }
+
+    header.banner h2 {
+        padding: 0 10%;
+    }
+
+
 
     .social-container {
         flex-wrap: wrap;
@@ -1330,6 +1372,12 @@ footer > .section-container {
 
 
 /* WEARABLES */
-@media only screen and (max-width: 225px) {
+@media only screen and (max-width: 235px) {
+    header.banner h2 {
+        padding: 0 5%;
+    }
 
+    header.banner p {
+        padding: 0 20%;
+    }
 }
