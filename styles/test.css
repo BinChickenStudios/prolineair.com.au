@@ -878,7 +878,7 @@ img.hero{
  /* NAVBAR */
 
 #top {
-    margin: 0 0 10vh 0;
+    margin: 0 0 clamp(100px, 10vh, 125px) 0;
 }
 
 
@@ -898,7 +898,7 @@ img.hero{
  .navbar {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 10vh;
+    grid-template-rows: clamp(100px, 10vh, 125px);
     align-items: center;
     justify-content: center;
  }
@@ -998,6 +998,7 @@ header.banner {
     min-height: 250px;
     max-height: 500px;
     position: relative;
+    padding: var(--spacing-lg) 0;
     background-color: var(--color-black);
     display: flex;
     flex-direction: column;
@@ -1328,7 +1329,7 @@ footer > .section-container {
         /* FONT-SIZE */
         --font-text-size: 1rem;
         --font-blockquote-size: 1rem;
-        --font-h1-size: 5rem;
+        --font-h1-size: 4.5rem;
         --font-h2-size: 4rem;
         --font-h3-size: 2.5rem;
         --font-h4-size: 1.5rem;
@@ -1345,7 +1346,7 @@ footer > .section-container {
     }
 
     header.banner h2 {
-        padding: 0 25%;
+        padding: 0 10%;
     }
 
     .services-grid {
@@ -1383,7 +1384,7 @@ footer > .section-container {
         --font-text-size: 1rem;
         --font-p-size: 1.rem;
         --font-blockquote-size: 1rem;
-        --font-h1-size: 4.5rem;
+        --font-h1-size: 3.25rem;
         --font-h2-size: 4rem;
         --font-h3-size: 2.5rem;
         --font-h4-size: 1.25rem;
@@ -1400,7 +1401,7 @@ footer > .section-container {
     }
 
     header.banner h2 {
-        padding: 0 20%;
+        padding: 0 0;
     }
 
     .about-grid {
@@ -1438,7 +1439,7 @@ footer > .section-container {
     }
 
     header.banner h2 {
-        padding: 0 10%;
+        /* padding: 0 10%; */
     }
 
 
