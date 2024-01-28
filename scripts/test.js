@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }, {
         rootMargin: '0px',
-        threshold: 0.1 // Adjust threshold as per your need
+        threshold: 0 // Adjust threshold as per your need
     });
 
     const sections = document.querySelectorAll('.section-container');

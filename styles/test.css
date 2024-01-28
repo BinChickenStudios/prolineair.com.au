@@ -440,6 +440,7 @@ main,
 header,
 section,
 footer,
+.navbar,
 .section-container {
     width: 100%;
     box-sizing: border-box;
@@ -944,7 +945,7 @@ img.hero{
     filter: var(--shadow-glow);
 }
 
-.navbar .menu {
+.menu {
     width: 8rem;
     max-width: 40%;
     height: 50vh;
@@ -971,7 +972,7 @@ img.hero{
     opacity: 0;
 }
 
-.navbar > .menu > .links > li {
+.menu > .links > li {
     padding: var(--spacing-lg) 0;
 }
 
