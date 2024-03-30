@@ -893,7 +893,8 @@ img.hero{
     margin: 0;
     position: fixed;
     z-index: 1;
-    filter: var(--shadow-glow-full) var(--shadow-medium);
+    padding: var(--spacing-md);
+    /* filter: var(--shadow-glow-full) var(--shadow-medium); */
  }
 
  .fixed-navbar {
@@ -1181,7 +1182,7 @@ footer > .section-container {
     gap: var(--spacing-sm) var(--spacing-sm);
 }
 
-.footer-grid .social-container img {
+.icon > img {
     width: var(--icon-lg);
     margin: 0 var(--spacing-sm);
     filter: var(--color-svg-accent);
@@ -1192,7 +1193,7 @@ footer > .section-container {
     position: relative;
 }
 
-.footer-grid .social-container .icon::before {
+.icon::before {
     content: "";
     position: absolute;
     width: var(--icon-lg);
@@ -1205,11 +1206,11 @@ footer > .section-container {
     z-index: 0;
 }
 
-.footer-grid .social-container a:hover img {
+a:hover > .icon > img {
     filter: var(--color-svg-white);
 }
 
-.footer-grid .social-container a:hover .icon::before {
+a:hover > .icon::before {
     background-color: var(--color-dark);
 }
 
@@ -1217,7 +1218,12 @@ footer > .section-container {
     color: var(--color-white);
 }
 
-.footer-grid a:hover {
+a:hover > .icon {
+    filter: var(--shadow-glow);
+    color: var(--color-highlight);
+}
+
+.footer-grid a:hover > .icon {
     filter: var(--shadow-glow);
     color: var(--color-highlight);
 }
