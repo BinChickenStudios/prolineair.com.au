@@ -34,3 +34,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const textareas = document.querySelectorAll('.auto-resize');
+    textareas.forEach(textarea => {
+        // textarea.addEventListener('input', autoResize, false);
+        // textarea.addEventListener('keydown', function(event) {
+        //     if (event.key === "Enter") {
+        //         autoResize.call(this);
+        //     }
+        // }, false);
+        let previousHeight = textarea.scrollHeight;
+        textarea.addEventListener('input', function() {            
+            let currentHeight = textarea.scrollHeight;
+            if (currentHeight != previousHeight) {
+                previousHeight = currentHeight;
+                autoResize.call(this);
+            }
+        }, false);
+    })
+  
+    function autoResize() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+      console.log("resizing");
+    }
+  });
+  
