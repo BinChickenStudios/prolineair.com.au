@@ -1248,14 +1248,32 @@ a:hover > .icon {
 }
 
 .menu-checkbox:checked ~ .navigation-container {
-    grid-template-columns: 1fr; 
-    min-height: 50vh;
+    grid-template-columns: 1fr;
 } 
 
-.menu-checkbox:checked ~ .navigation-container .group-element {
-    display: flex;
+.menu-checkbox:checked ~ .navigation-container .navigation-element {
     padding: var(--spacing-sm) 0;
-} 
+}
+
+.navigation-container .hidden-element {
+    transition: 
+    transform var(--transition-normal) ease-in-out,
+    opacity var(--transition-normal) ease-in-out;
+}
+
+.menu-checkbox:not(:checked) ~ .navigation-container .hidden-element {
+    transition: none;
+}
+
+.menu-checkbox:checked ~ .navigation-container .hidden-element {
+    opacity: 1;
+    transform: scaleY(1);
+
+    transition: 
+    transform var(--transition-normal) ease-in-out,
+    opacity var(--transition-normal) ease-in-out;
+}
+
 
 .menu-checkbox:checked ~ .navigation-container .list-collection {
     flex-direction: column;
@@ -1267,7 +1285,6 @@ a:hover > .icon {
 
 .menu-checkbox:checked ~ .navigation-container .menu-container {
     align-items: center;
-    position: fixed;
 }
 
 
@@ -1281,13 +1298,15 @@ a:hover > .icon {
         grid-template-columns: 1fr 2fr;
     }
 
-    .navigation-container .group-element.button-container,
-    .navigation-container .group-element.list-container {
+    .navigation-container > .hidden-element {
         display: none;
+        top: 0;
+        opacity: 0;
+        transform: scaleY(0);
     }
 } 
 
-@media screen and (max-width: 512px) {
+/* @media screen and (max-width: 512px) {
 
     :root {
         --navigation-bar-size: var(--navigation-bar-md);
@@ -1309,12 +1328,15 @@ a:hover > .icon {
     .menu-element {
         position: static;
     }
-    
+
     .menu-checkbox:checked ~ .navigation-container .menu-container {
         position: static;
     }
-} 
+}  */
 
+.menu-element:hover .menu-icon span {
+    background-color: var(--color-white);
+}
 
 .menu-icon {
     width: var(--icon-lg);
@@ -1331,13 +1353,10 @@ a:hover > .icon {
     border-radius: var(--border-radius-md);
     background-color: var(--color-accent);
     position: absolute;
-    transition: transform var(--transition-slow) ease, opacity var(--transition-slow) ease;
+    transition: 
+    transform var(--transition-slow) ease-in-out, 
+    opacity var(--transition-slow) ease-in-out;
 }
-
-.menu-element:hover .menu-icon span {
-    background-color: var(--color-white);
-}
-
 
 .menu-icon span:nth-child(1) {
     top: 0;
@@ -1355,21 +1374,21 @@ a:hover > .icon {
     filter: var(--shadow-glow);
 }
 
-.menu-checkbox:checked ~ .menu-element .menu-icon span {
+.menu-checkbox:checked ~ .navigation-container > .menu-container > .menu-element > .menu-icon span {
     top: 50%;
 }
 
 
-.menu-checkbox:checked ~ .menu-element .menu-icon span:nth-child(1) {
+.menu-checkbox:checked ~ .navigation-container > .menu-container > .menu-element > .menu-icon span:nth-child(1) {
     transform: rotate(45deg);
 }
 
-.menu-checkbox:checked ~ .menu-element .menu-icon span:nth-child(2) {
+.menu-checkbox:checked ~ .navigation-container > .menu-container > .menu-element > .menu-icon span:nth-child(2) {
     opacity: 0;
     transform: scaleX(0);
 }
 
-.menu-checkbox:checked ~ .menu-element .menu-icon span:nth-child(3) {
+.menu-checkbox:checked ~ .navigation-container > .menu-container > .menu-element > .menu-icon span:nth-child(3) {
     transform: rotate(-45deg);
 }
 
@@ -1378,5 +1397,4 @@ form.grid-container {
     width: 50vw;
     max-width: 750px;
 }
-
 
